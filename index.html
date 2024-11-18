@@ -27,7 +27,7 @@
         </div>
     </section>
 
-    <div class="main-content">
+
         <section class="about" id="about">
             <div class="about-container">
                 <!-- 좌측: 프로필 및 학력 정보 -->
@@ -129,35 +129,37 @@
                             <!-- 선택적: 필터 버튼 -->
                             <div class="gallery-filter">
                                 <button class="filter-btn active" data-filter="all">전체</button>
-                                <button class="filter-btn" data-filter="web">웹</button>
-                                <button class="filter-btn" data-filter="app">앱</button>
+                                <button class="filter-btn" data-filter="UI">UIUX</button>
+                                <button class="filter-btn" data-filter="HTML">HTML</button>
+                                <button class="filter-btn" data-filter="IMG">IMAGE</button>
+                                <button class="filter-btn" data-filter="PR">Preimer pro</button>
                                 <!-- 필요한 만큼 필터 버튼 추가 -->
                             </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item mix" data-category="web">
+                    <div class="gallery-item mix" data-category="UI">
                         <div class="gallery-image">
                             <img src="img/UI 화면 목업 copy.png" alt="프로젝트 1">
                             <div class="overlay">
                                 <div class="gallery-content">
-                                    <h3>프로젝트 1</h3>
-                                    <p>프로젝트 설명이 들어갑니다.</p>
+                                    <h3>프라임 비디오 UI 리디자인</h3>
+                                    <p>프라임 비디오의 UI를 재구성해 보았습니다.</p>
                                     <div class="gallery-buttons">
-                                        <a href="#" class="btn">자세히 보기</a>
+                                        <a href="#" class="btn" data-pdf="img/2301110195_최훈석_works.pdf">자세히 보기</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="gallery-item mix" data-category="app">
+                    <div class="gallery-item mix" data-category="HTML">
                         <div class="gallery-image">
-                            <img src="img/2301110195_최훈석.jpg" alt="프로젝트 2">
+                            <img src="img/상세페이지.png" alt="프로젝트 2">
                             <div class="overlay">
                                 <div class="gallery-content">
-                                    <h3>프로젝트 2</h3>
-                                    <p>프로젝트 설명이 들어갑니다.</p>
+                                    <h3>상세 페이지 제작</h3>
+                                    <p>상세 페이지의 형태를 분석 리디자인 해보았습니다.</p>
                                     <div class="gallery-buttons">
-                                        <a href="#" class="btn">자세히 보기</a>
+                                        <a href="#" class="btn" data-pdf="img/Artboard 2 copy.pdf">자세히 보기</a>
                                     </div>
                                 </div>
                             </div>
@@ -165,15 +167,15 @@
                     </div>
 
                     <!-- 새로운 프로젝트 3 -->
-                    <div class="gallery-item mix" data-category="web">
+                    <div class="gallery-item mix" data-category="IMG">
                         <div class="gallery-image">
-                            <img src="img/뮤직비디오 기획촬영.mp4.jpg" alt="프로젝트 3">
+                            <img src="img/2301110195_최훈석.jpg" alt="프로젝트 3">
                             <div class="overlay">
                                 <div class="gallery-content">
-                                    <h3>프로젝트 3</h3>
-                                    <p>세 번째 프로젝트 설명이 들어갑니다.</p>
+                                    <h3>제품 촬영</h3>
+                                    <p>제품의 이미지 컷을 만들기 위해 촬영 기획, 소품 준비, 촬영을 하였습니다. </p>
                                     <div class="gallery-buttons">
-                                        <a href="#" class="btn">자세히 보기</a>
+                                        <a href="#" class="btn" data-pdf="path/to/your/file.pdf">자세히 보기</a>
                                     </div>
                                 </div>
                             </div>
@@ -181,15 +183,15 @@
                     </div>
 
                     <!-- 새로운 프로젝트 4 -->
-                    <div class="gallery-item mix" data-category="app">
+                    <div class="gallery-item mix" data-category="PR">
                         <div class="gallery-image">
-                            <img src="img/최훈석 로고로 만드는 애니메이션 과제 제출.mp4.jpg" alt="프로젝트 4">
+                            <img src="img/뮤직비디오 기획촬영.mp4.jpg" alt="프로젝트 4">
                             <div class="overlay">
                                 <div class="gallery-content">
-                                    <h3>프로젝트 4</h3>
-                                    <p>네 번째 프로젝트 설명이 들어갑니다.</p>
+                                    <h3>뮤직비디오 기획 촬영</h3>
+                                    <p>장미여관의 장가가고 싶은 남자의 뮤직비디오를 기획 촬영한 프로젝트</p>
                                     <div class="gallery-buttons">
-                                        <a href="#" class="btn">자세히 보기</a>
+                                        <a href="#" class="btn" data-pdf="path/to/your/file.pdf">자세히 보기</a>
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +225,7 @@
                 </div>
             </div>
         </footer>
-    </div>
+
 
     <script>
         function handleScroll() {
@@ -250,30 +252,39 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryGrid = document.querySelector('.gallery-grid');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // 활성 버튼 스타일 변경
-            filterBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 활성 버튼 스타일 변경
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
 
-            const filter = this.getAttribute('data-filter');
-            
-            // 모든 아이템에 대해 필터링 적용
-            galleryItems.forEach(item => {
-                // 먼저 트랜지션 효과 적용
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.classList.remove('hide');
-                } else {
-                    item.classList.add('hide');
-                }
+                const filter = this.getAttribute('data-filter');
+                
+                // 모든 아이템에 대해 필터링 적용
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hide'); // 해당 카테고리 아이템 보이기
+                    } else {
+                        item.classList.add('hide'); // 해당 카테고리 아이템 숨기기
+                    }
+                });
+
+                // 필터링된 아이템을 첫 번째 위치로 이동
+                const visibleItems = Array.from(galleryItems).filter(item => !item.classList.contains('hide'));
+                visibleItems.forEach(item => {
+                    item.style.order = 0; // 모든 보이는 아이템의 order를 0으로 설정
+                });
+                galleryItems.forEach(item => {
+                    if (item.classList.contains('hide')) {
+                        item.style.order = 1; // 숨겨진 아이템의 order를 1로 설정
+                    }
+                });
             });
         });
     });
-});
 
 function updateActiveNav() {
     const sections = document.querySelectorAll('section[id]');
@@ -296,6 +307,10 @@ function updateActiveNav() {
         activeSectionId = 'hero'; // hero 섹션이 보일 때 HOME 활성화
     }
 
+    // about 섹션이 화면에 보일 때 ACTIVE 상태로 변경
+    if (activeSectionId === 'about') {
+        activeSectionId = 'about'; // about 섹션이 보일 때 ACTIVE 상태로 유지
+    }
 
     // 모든 네비게이션 링크에서 active 클래스 제거
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -314,42 +329,12 @@ function updateActiveNav() {
 
 
 
-// DOMContentLoaded 이벤트 리스너
-document.addEventListener('DOMContentLoaded', function() {
-    const nav = document.querySelector('.gnav');
-    let lastScrollTop = 0;
-    let isScrolling;
 
-    window.addEventListener('scroll', function() {
-        clearTimeout(isScrolling);
-
-        isScrolling = setTimeout(function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            // 스크롤 방향 확인
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // 아래로 스크롤
-                nav.classList.add('hide');
-            } else {
-                // 위로 스크롤
-                nav.classList.remove('hide');
-            }
-
-            lastScrollTop = scrollTop;
-
-            // 활성화 네비게이션 업데이트
-            updateActiveNav();
-        }, 10);
-    });
 
     // 초기 활성화 상태 설정
     updateActiveNav();
 
-    // 마우스가 nav에 올라갔을 때는 항상 표시
-    nav.addEventListener('mouseenter', function() {
-        nav.classList.remove('hide');
-    });
-});
+
 
 // 스크롤 이벤트에 연결
 window.addEventListener('scroll', updateActiveNav);
@@ -363,8 +348,44 @@ document.addEventListener('DOMContentLoaded', updateActiveNav);
         // DOM이 완전히 로드된 후 실행
         document.addEventListener('DOMContentLoaded', handleScroll);
 
+        document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const closeBtn = document.querySelector('.lightbox .close');
+
+        // "자세히 보기" 버튼 클릭 시 Lightbox 열기
+        document.querySelectorAll('.gallery-buttons .btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault(); // 기본 링크 동작 방지
+                const pdfUrl = this.getAttribute('data-pdf'); // PDF URL 가져오기
+                lightboxContent.src = pdfUrl; // iframe에 PDF URL 설정
+                lightbox.style.display = 'flex'; // Lightbox 표시
+            });
+        });
+
+        // 닫기 버튼 클릭 시 Lightbox 닫기
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none'; // Lightbox 숨기기
+            lightboxContent.src = ''; // iframe 초기화
+        });
+
+        // Lightbox 외부 클릭 시 닫기
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none'; // Lightbox 숨기기
+                lightboxContent.src = ''; // iframe 초기화
+            }
+        });
+    });
+
+
 
     </script>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <iframe id="lightbox-content" src="" frameborder="0"></iframe>
+    </div>
 
 </body>
 </html>
